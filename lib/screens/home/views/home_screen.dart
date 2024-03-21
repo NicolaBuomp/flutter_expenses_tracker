@@ -1,5 +1,6 @@
+import 'package:expenses_tracker/screens/add_expense/views/add_expense.dart';
 import 'package:expenses_tracker/screens/home/views/main_screen.dart';
-import 'package:expenses_tracker/screens/stats/screens/stats_screen.dart';
+import 'package:expenses_tracker/screens/stats/views/stats_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -51,7 +52,14 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (BuildContext context) => const AddExpense(),
+            ),
+          );
+        },
         backgroundColor: Colors.black,
         shape: const CircleBorder(),
         child: const Icon(Iconsax.add),
